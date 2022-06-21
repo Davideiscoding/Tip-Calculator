@@ -1,5 +1,8 @@
 # TipCalculatorApp
 
+![image](https://user-images.githubusercontent.com/51859587/174902506-14ffb87c-5fba-4e44-9971-e93156b5c390.png)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
