@@ -1,0 +1,81 @@
+<div class="header">
+  <img src="assets/images/logo.svg" alt="logo" />
+</div>
+
+<div class="mainContainer">
+  <div class="topSection">
+    <div class="label">
+      <label for="input">Bill</label>
+    </div>
+
+    <div class="inputContainer">
+      <input type="number" placeholder="0.0" id="input" min="0" [(ngModel)]="bill" />
+      <img src="assets/images/icon-dollar.svg" alt="dollar-icon" />
+    </div>
+
+    <div class="label">
+      <label for="customTip">Select Tip %</label>
+    </div>
+    <div class="btnContainer">
+      <button class="btn" (click)="fivePercent()">5%</button>
+      <button class="btn" (click)="tenPercent()">10%</button>
+      <button class="btn" (click)="fifteenPercent()">15%</button>
+      <button class="btn" (click)="twentyfivePercent()">25%</button>
+      <button class="btn" (click)="fiftyPercent()">50%</button>
+      <input
+        type="number"
+        id="customTip"
+        name="custom"
+        placeholder="Custom"
+        (keyup)="custom($event)"
+        [(ngModel)]="customAmount"
+      />
+    </div>
+
+    <div class="label">
+      <label for="people">Number of People</label>
+    </div>
+    <div class="peopleWrapper">
+      <input
+        type="number"
+        id="people"
+        name="person"
+        [(ngModel)]="person"
+        min="1"
+      />
+      <img src="assets/images/icon-person.svg" alt="person" />
+    </div>
+  </div>
+
+  <div class="bottomSection">
+    <div class="Amount">
+      <div class="desc">
+        <p>
+          Tip Amount <br />
+          <span>/ person</span>
+        </p>
+        <div class="tipValue" *ngIf="0 == tipPerPerson; else elseBlock">
+          $ {{ staticNumber }}
+        </div>
+        <ng-template class="number" #elseBlock>
+          <div class="tipValue">$ {{ tipPerPerson }}</div>
+        </ng-template>
+      </div>
+
+      <div class="desc">
+        <p>
+          Total <br />
+          <span>/ person</span>
+        </p>
+        <div class="tipValue" *ngIf="0 == totalPerPerson; else secondElseBlock">
+          $ {{ staticNumber }}
+        </div>
+        <ng-template class="number" #secondElseBlock>
+          <div class="tipValue">$ {{ totalPerPerson }}</div>
+        </ng-template>
+      </div>
+    </div>
+
+    <button class="reset" (click)="resetInputs()">RESET</button>
+  </div>
+</div>

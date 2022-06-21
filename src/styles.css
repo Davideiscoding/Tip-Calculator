@@ -1,0 +1,14 @@
+/* @font-face {
+    font-family: SpaceMono;
+    src: url(https://fonts.google.com/specimen/Space+Mono);
+} */
+
+html,
+body {
+  background-color: #c5e4e7;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: monospace;
+  color: #6b7777;
+}
+
